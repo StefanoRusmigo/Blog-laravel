@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use Notifiable;
+    
 
     /**
      * The attributes that are mass assignable.
@@ -26,4 +27,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function commments()
+    {
+
+        return $this->hasMany(Comment::class);
+    }
+
+  public function posts()
+    {
+
+        return $this->hasMany(Post::class);
+    }
+
+     public function publish($post)
+    {
+        $this->posts()->save($post);
+    }
 }
