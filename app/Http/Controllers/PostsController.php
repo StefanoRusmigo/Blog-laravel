@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-
 class PostsController extends Controller
 {
 
@@ -14,8 +13,28 @@ class PostsController extends Controller
     }
     public function index()
     {
-    	$posts = Post::latest()->get();
-    	return view('posts.index',compact('posts'));
+    	$posts = Post::latest()->filter(request(['month','year']))->get();
+
+        // if ($month = request('month'))
+        // {
+        //     $posts->whereMonth('created_at',Carbon::parse($month)->month);
+
+        // }
+
+
+        // if ($year = request('year'))
+        // {
+        //     $posts->whereYear('created_at',$year);
+
+        // }
+
+        // $posts = $posts->get();
+
+
+
+
+        return view('posts.index',compact('posts'));
+
 
     }
 
