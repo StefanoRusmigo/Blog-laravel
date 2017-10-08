@@ -8,7 +8,7 @@ class PostsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth');
 
     }
     public function index()
@@ -31,7 +31,6 @@ class PostsController extends Controller
         // $posts = $posts->get();
 
 
-        session()->flash('message',"You have successfully created a post");
 
         return view('posts.index',compact('posts'));
 
@@ -66,6 +65,7 @@ class PostsController extends Controller
     	#Post::create(request(['title', 'body']));
         auth()->user()->publish(
             new Post(request(['title','body'])));
+        session()->flash('message',"You have successfully created a post");
 
     	return redirect('/');
 

@@ -10,7 +10,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class Welcome extends Mailable
 {
     use Queueable, SerializesModels;
-    public $user;
     /**
      * Create a new message instance.
      *
@@ -18,7 +17,6 @@ class Welcome extends Mailable
      */
     public function __construct($user)
     {
-        $this->user = $user;
     }
 
     /**

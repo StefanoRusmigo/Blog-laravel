@@ -30,6 +30,7 @@ Route::get('/logout', 'SessionsController@destroy');
 Route::get('/register', 'RegistrationsController@create');
 Route::post('/register', 'RegistrationsController@store');
 
+Route::get('/posts/tag/{tag}', 'TagsController@index');
 
 
 
