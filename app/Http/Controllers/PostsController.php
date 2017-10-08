@@ -31,7 +31,7 @@ class PostsController extends Controller
         // $posts = $posts->get();
 
 
-
+        session()->flash('message',"You have successfully created a post");
 
         return view('posts.index',compact('posts'));
 

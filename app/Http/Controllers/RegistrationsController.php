@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Mail\WelcomeMarkdown;
 
 class RegistrationsController extends Controller
 {
+
+  public function __construct()
+  {
+
+    $this->middleware('guest');
+  }
+
 	public function create()
 	{
    
@@ -27,6 +35,9 @@ class RegistrationsController extends Controller
 				      'password'=>$password]);
 
 		auth()->login($user);
+
+		\Mail::to($user)->send(new WelcomeMarkdown($user));
+
 		return redirect('/');	
 	}
 }

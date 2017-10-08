@@ -26,6 +26,13 @@
       </div>
     </div>
 
+    @if($flash= session('message'))
+      <div class="alert alert-success" role="alert">
+        
+        {{ $flash }}
+      </div>
+    @endif
+
     <div class="container">
 
       <div class="row">
