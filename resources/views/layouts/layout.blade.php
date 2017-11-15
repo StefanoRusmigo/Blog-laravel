@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-
     <title>Blog Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
     
@@ -68,5 +68,11 @@
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    
+<script src="/js/tinymce/js/tinymce/tinymce.min.js"></script>
+
+<script> var editor_config = { path_absolute : "{{ URL::to('/') }}/", selector : "textarea", 
+toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media", relative_urls: false, file_browser_callback : function(field_name, url, type, win) { var x = window.innerWidth || document.documentElement.clientWidth || document.getElementByTagName('body')[0].clientWidth; var y = window.innerHeight|| document.documentElement.clientHeight|| document.grtElementByTagName('body')[0].clientHeight; var cmsURL = editor_config.path_absolute+'laravel-filemanaget?field_name'+field_name; if (type = 'image') { cmsURL = cmsURL+'&type=Images'; } else { cmsUrl = cmsURL+'&type=Files'; } tinyMCE.activeEditor.windowManager.open({ file : cmsURL, title : 'Filemanager', width : x * 0.8, height : y * 0.8, resizeble : 'yes', close_previous : 'no' }); } }; tinymce.init(editor_config); </script>﻿
   </body>
 </html>

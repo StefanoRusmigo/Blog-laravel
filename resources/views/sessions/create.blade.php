@@ -19,5 +19,6 @@
 	</div>
 	@include('layouts.errors')
 </form>
+<a href="{{ route('register') }}">Register</a>
 
 @endsection

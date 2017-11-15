@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body','image'];
 
     public function comments()
     {

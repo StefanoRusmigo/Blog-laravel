@@ -3,9 +3,10 @@
 @section('content')
 
  <h1> {{ $post->title }} </h1>
- {{ $post->body }}
+ <img src="{{ $post->image }}" width="100%">
+     {!!$post->body!!}
 <hr>
-
+<a href="{{ route('delete_post',$post->id) }}">delete post</a>
 
  <div class="comments form-group">
  <ul class="list-group">
@@ -15,7 +16,7 @@
    	  <strong>
    	  	{{ $comment->created_at->diffForHumans() }}:&nbsp;
    	  </strong>
-     {{ $comment->body }}
+   {!!$comment->body!!}
 
      </li>
    @endforeach

@@ -36,7 +36,8 @@ class RegistrationsController extends Controller
 
 		auth()->login($user);
 
-		\Mail::to($user)->send(new WelcomeMarkdown($user));
+		//Prepend a backslash or use Mail
+		\Mail::to('stefanorusmigo@hotmail.com')->send(new WelcomeMarkdown($user));
 
 		return redirect('/');	
 	}

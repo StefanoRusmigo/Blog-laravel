@@ -7,12 +7,12 @@
 
 	<div class="form-group" >
 	  <label for="name">Name:</label>
-	  <input type="text" name="name" class="form-control" id="name" required>
+	  <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="name" required>
     </div>
 
 	<div class="form-group" >
 	  <label for="email">Email:</label>
-	  <input type="text" name="email" class="form-control" id="email" required>
+	  <input type="text" name="email" value="{{ old('email') }}" class="form-control" id="email" required>
     </div>
 
 	<div class="form-group" >
@@ -32,5 +32,6 @@
 @include('layouts.errors')
 
 </form>
+<a href="{{ route('login') }}">Login</a>
 
 @endsection
